@@ -19,7 +19,9 @@ Open a shell inside your Tyk gateway instace, and install the [`logger-python`](
 
     pip3 install --upgrade usagelogger
 
-Follow [Tyk's official guide](https://tyk.io/docs/plugins/supported-languages/rich-plugins/python/tutorial-add-demo-plugin-api/) to add a python plugin to you Tyk Gateway. Set `bundle_base_url` to `https://github.com/resurfaceio/tyk-plugin/releases/download/v0.1/bundle.zip` in your `tyk.conf` file.
+Follow [Tyk's official guide](https://tyk.io/docs/plugins/supported-languages/rich-plugins/python/tutorial-add-demo-plugin-api/) to add a python plugin to you Tyk Gateway.
+
+Set `bundle_base_url` to `https://github.com/resurfaceio/tyk-plugin/releases/download/v0.1/bundle.zip` in your `tyk.conf` file.
 
 //TODO
 
