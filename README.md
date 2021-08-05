@@ -5,7 +5,7 @@ Easily log API requests and responses to your own [system of record](https://res
 ## Requirements
 
 * Tyk gateway
-* docker (to run Resurface)
+* docker (for [Resurface](https://resurface.io/installation))
 
 ## Ports Used
 
@@ -13,15 +13,15 @@ Easily log API requests and responses to your own [system of record](https://res
 * 4001 - Resurface microservice
 * 4000 - Trino database UI
 
-## Python setup
+## Python plugin
 
 Open a shell inside your Tyk gateway instace, and install the [`logger-python`](https://github.com/resurfaceio/logger-python) dependency:
 
-    pip install usagelogger
+    pip3 install --upgrade usagelogger
 
-<!--Work in progress-->
+Follow [Tyk's official guide](https://tyk.io/docs/plugins/supported-languages/rich-plugins/python/tutorial-add-demo-plugin-api/) to add a python plugin to you Tyk Gateway. Set `bundle_base_url` to `https://github.com/resurfaceio/tyk-plugin/` in your `tyk.conf` file
 
-## Go setup
+## Go plugin
 // TODO
 
 ## Protecting User Privacy
