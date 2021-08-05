@@ -29,7 +29,7 @@ Easily log API requests and responses to your own [system of record](https://res
   "enable_bundle_downloader": true,
   "bundle_base_url": "https://github.com/resurfaceio/tyk-plugin/releases/download/v0.1/"
   ```
-  The last line is the base URL that Tyk will use to download the plugin.
+  The last line corresponds to the base URL that Tyk will use to download the plugin.
 
 - Modify your API spec using the raw JSON editor in the Tyk Dashboard or directly in the JSON file (in the case of the Community Edition) and add the `custom_middleware_bundle` field to it as like this:
 
