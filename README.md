@@ -22,14 +22,30 @@ Easily log API requests and responses to your own [system of record](https://res
 - Make sure that Python plugins are enabled in the global settings for your Tyk gateway. To do this, you need to add the following block to `tyk.conf`:
 
   ```
+  ...
   "coprocess_options": {
     "enable_coprocess": true,
     "python_path_prefix": "/opt/tyk-gateway"
   },
   "enable_bundle_downloader": true,
-  "bundle_base_url": "https://github.com/resurfaceio/tyk-plugin/releases/download/v0.1/"
+  "bundle_base_url": "https://github.com/resurfaceio/tyk-plugin/releases/download/v0.1/",
+  ...
   ```
-  The last line corresponds to the base URL that Tyk will use to download the plugin.
+  
+  The `bundle_base_url` corresponds to the base URL that Tyk will use to download the plugin.
+  
+- In addition, append the following lines to `tyk.conf`:
+ 
+   ```
+   ...
+   "USAGE_LOGGERS_URL": "http://localhost:4001/message",
+   "USAGE_LOGGERS_RULES": "include debug"
+   ...
+   ```
+   These fields are necessary for the plugin to communicate with Resurface:
+     - `USAGE_LOGGERS_URL` corresponds to the Resurface database connection URL. If you're running Tyk Gateway as a docker container, you should use your `docker0` IP address instead of `localhost`.
+     - `USAGE_LOGGERS_RULES` corresponds to a [set of rules for logging](https://github.com/resurfaceio/tyk-plugin#protecting-user-privacy).
+ 
 
 - Modify your API spec using the raw JSON editor in the Tyk Dashboard or directly in the JSON file (in the case of the Community Edition) and add the `custom_middleware_bundle` field to it as like this:
 
