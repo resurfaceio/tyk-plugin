@@ -40,7 +40,7 @@ Easily log API requests and responses to your own [system of record](https://res
    ...
    "USAGE_LOGGERS_URL": "http://localhost:4001/message",
    "USAGE_LOGGERS_RULES": "include debug"
-   ...
+   }
    ```
    These fields are necessary for the plugin to communicate with Resurface:
      - `USAGE_LOGGERS_URL` corresponds to the Resurface database connection URL. If you're running Tyk Gateway as a docker container, you should use your `docker0` IP address instead of `localhost`.
@@ -64,7 +64,7 @@ Easily log API requests and responses to your own [system of record](https://res
   }
   </pre>
   
- - Restart your Tyk gateway. You might need to use [the Tyk Python Gateway build](https://tyk.io/docs/plugins/supported-languages/rich-plugins/python/tutorial-add-demo-plugin-api/#running-the-tyk-python-gateway-build).
+ - Restart your Tyk gateway (you might need to do it using [the Tyk Python Gateway build](https://tyk.io/docs/plugins/supported-languages/rich-plugins/python/tutorial-add-demo-plugin-api/#running-the-tyk-python-gateway-build)).
 
 
 ## Option 2: Go plugin
