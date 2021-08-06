@@ -1,6 +1,7 @@
 from tyk.decorators import *
 from time import time
 from usagelogger import HttpLogger, HttpMessage, HttpRequestImpl, HttpResponseImpl
+import json
 
 
 class HttpLoggerForTyk:
@@ -46,7 +47,11 @@ class HttpLoggerForTyk:
         self.req = None
         self.res = None
 
-resurface_logger = HttpLoggerForTyk("http://172.17.0.1:4001/message", "include debug")
+
+with open("/opt/tyk-gateway/tyk.conf") as f:
+    conf_file = json.loads(f.read())
+
+resurface_logger = HttpLoggerForTyk(conf_file["USAGE_LOGGERS_URL"], conf_file["USAGE_LOGGERS_RULES"])
 
 
 @Hook
