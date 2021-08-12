@@ -19,7 +19,7 @@ Easily log API requests and responses to your own [system of record](https://res
 
       pip3 install --upgrade usagelogger
 
-- Make sure that Python plugins are enabled in the global settings for your Tyk gateway. To do this, you need to add the following block to `tyk.conf` (or `tyk.standalone.conf` if you're using the docker container version):
+- Make sure that Python plugins are enabled in the global settings for your Tyk gateway. To do this, you need to add the following block to `tyk.conf` (or `tyk.standalone.conf` if you're running Tyk Gateway as a docker container):
 
   ```
   ...
