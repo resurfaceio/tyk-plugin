@@ -19,7 +19,7 @@ Easily log API requests and responses to your own [system of record](https://res
 
       pip3 install --upgrade usagelogger
 
-- Make sure that Python plugins are enabled in the global settings for your Tyk gateway. To do this, you need to add the following block to `tyk.conf`:
+- Make sure that Python plugins are enabled in the global settings for your Tyk gateway. To do this, you need to add the following block to `tyk.conf` (or `tyk.standalone.conf` if you're using the docker container version):
 
   ```
   ...
@@ -47,7 +47,7 @@ Easily log API requests and responses to your own [system of record](https://res
      - `USAGE_LOGGERS_RULES` corresponds to a [set of rules for logging](https://github.com/resurfaceio/tyk-plugin#protecting-user-privacy).
  
 
-- Modify your API spec using the raw JSON editor in the Tyk Dashboard or directly in the JSON file (in the case of the Community Edition) and add the `custom_middleware_bundle` field to it as like this:
+- Modify your API spec using the raw JSON editor in the Tyk Dashboard or directly in the JSON file (in the case of the Community Edition) and append the `"custom_middleware_bundle": "bundle.zip"` line to it. Here's an example:
 
   <pre>
   {
