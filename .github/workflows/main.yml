@@ -18,7 +18,7 @@ jobs:
         run:  docker run --rm -w "/tmp" -v $(pwd)/python:/tmp tyk-bundle-builder
       - uses: ncipollo/release-action@v1
         with:
-          tag: "v0.4"
-          force_update: true
+          tag: "v0.5"
+          allowUpdates: true
           artifacts: "./python/bundle.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
