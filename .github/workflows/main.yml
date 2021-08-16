@@ -15,10 +15,12 @@ jobs:
       - name: Build docker image
         run: docker build -t tyk-bundle-builder .
       - name: Run container
-        run:  docker run --rm -w "/tmp" -v $(pwd)/python:/tmp tyk-bundle-builder
+        run: |
+          docker run --rm -w "/tmp" -v $(pwd)/python:/tmp tyk-bundle-builder
+          mv ./python/bundle.zip ./python/resurfaceio-logger.zip
       - uses: ncipollo/release-action@v1
         with:
           tag: ${{ github.event.inputs.tag }}
           allowUpdates: true
-          artifacts: "./python/bundle.zip"
+          artifacts: "./python/resurfaceio-logger.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
