@@ -3,7 +3,7 @@ name: BundleBuilder
 on:
   workflow_dispatch:
     inputs:
-      tags:
+      tag:
         description: 'Tag for new release'
         required: true
 
