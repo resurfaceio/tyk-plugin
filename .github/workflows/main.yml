@@ -1,8 +1,8 @@
 name: BundleBuilder
 
 on:
-  #push:
-  #  branches: [ master ]
+  push:
+    branches: [ master ]
   #pull_request:
   #  branches: [ master ]
   workflow_dispatch:
@@ -19,5 +19,5 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           tag: "v0.2"
-          bodyFile: "bundle.zip"
+          bodyFile: "/tmp/bundle.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
