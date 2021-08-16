@@ -1,0 +1,22 @@
+name: BundleBuilder
+
+on:
+  #push:
+  #  branches: [ master ]
+  #pull_request:
+  #  branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build docker image
+        run: docker build -t tyk-bundle-builder .
+      - name: Run container
+        run:  docker run --rm -w "/tmp" -v $(pwd)/python:/tmp tplugin
+      - uses: ncipollo/release-action@v1
+        with:
+          bodyFile: "bundle.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
