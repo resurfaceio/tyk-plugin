@@ -15,7 +15,7 @@ jobs:
       - name: Build docker image
         run: docker build -t tyk-bundle-builder .
       - name: Run container
-        run:  docker run --rm -w "/tmp" -v $(pwd)/python:/tmp tplugin
+        run:  docker run --rm -w "/tmp" -v $(pwd)/python:/tmp tyk-bundle-builder
       - uses: ncipollo/release-action@v1
         with:
           bodyFile: "bundle.zip"
