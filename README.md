@@ -47,7 +47,7 @@ Easily log API requests and responses to your own [system of record](https://res
      - `USAGE_LOGGERS_RULES` corresponds to a [set of rules for logging](https://github.com/resurfaceio/tyk-plugin#protecting-user-privacy).
  
 
-- Modify your API spec using the raw JSON editor in the Tyk Dashboard or directly in the JSON file (in the case of the Community Edition) and append the `"custom_middleware_bundle": "bundle.zip"` line to it. Here's an example:
+- Modify your API spec using the raw JSON editor in the Tyk Dashboard or directly in the JSON file (in the case of the Community Edition) and append the `"custom_middleware_bundle": "resurfaceio-logger.zip"` line to it. Here's an example:
 
   <pre>
   {
@@ -60,7 +60,7 @@ Easily log API requests and responses to your own [system of record](https://res
       "target_url": "http://httpbin.org",
       "strip_listen_path": true
     },
-    <b>"custom_middleware_bundle": "bundle.zip"</b>
+    <b>"custom_middleware_bundle": "resurfaceio-logger.zip"</b>
   }
   </pre>
   
