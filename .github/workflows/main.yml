@@ -1,11 +1,11 @@
 name: BundleBuilder
 
 on:
-  push:
-    branches: [ master ]
-  #pull_request:
-  #  branches: [ master ]
   workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Tag for new release'
+        required: true
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
         run:  docker run --rm -w "/tmp" -v $(pwd)/python:/tmp tyk-bundle-builder
       - uses: ncipollo/release-action@v1
         with:
-          tag: latest
+          tag: ${{ github.event.inputs.tag }}
           allowUpdates: true
           artifacts: "./python/bundle.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
