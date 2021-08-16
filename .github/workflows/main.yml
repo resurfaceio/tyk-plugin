@@ -19,5 +19,5 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           tag: "v0.2"
-          bodyFile: "/tmp/bundle.zip"
+          bodyFile: "/python/bundle.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
