@@ -43,7 +43,7 @@ Easily log API requests and responses to your own [system of record](https://res
    }
    ```
    These fields are necessary for the plugin to communicate with Resurface:
-     - `USAGE_LOGGERS_URL` corresponds to the Resurface database connection URL. If you're running Tyk Gateway as a docker container, you should use your `docker0` IP address instead of `localhost`.
+     - `USAGE_LOGGERS_URL` corresponds to the Resurface database connection URL. If you're running Tyk Gateway as a docker container, you should use `host.docker.internal` (or your `docker0` IP address, which defaults to `172.17.0.1` if you are on linux) instead of `localhost`.
      - `USAGE_LOGGERS_RULES` corresponds to a [set of rules for logging](https://github.com/resurfaceio/tyk-plugin#protecting-user-privacy).
  
 
